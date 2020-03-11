@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.criminalsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.criminal {
+    border: 1px solid black;
+    background-color: lightgray;
+    margin: .5em;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+}
+
+.criminal p,
+li {
+    font-size: small;
+}
