@@ -1,3 +1,16 @@
 {
-    "notes": []
+  "notes": [
+    {
+      "date": "2020-03-12",
+      "subject": "Test Note",
+      "text": "Just making sure my new note system is working properly.",
+      "id": 1
+    },
+    {
+      "date": 1584387964891,
+      "subject": "Test Note 2",
+      "text": "Testing a modification to the note provider",
+      "id": 2
+    }
+  ]
 }
