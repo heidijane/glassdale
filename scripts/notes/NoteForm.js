@@ -1,8 +1,22 @@
 import { saveNote } from "./NoteDataProvider.js"
 
+const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
 
+let visibility = false
+
+eventHub.addEventListener("noteFormButtonClicked", customEvent => {
+    visibility = !visibility
+
+    if (visibility) {
+        contentTarget.classList.remove("hidden")
+    } else {
+        contentTarget.classList.add("hidden")
+    }
+})
+
 const render = () => {
+    contentTarget.classList.add("hidden")
     contentTarget.innerHTML = `
         <fieldset>
             <label for="note-subject">Subject</label>

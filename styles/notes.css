@@ -1,0 +1,8 @@
+.notesContainer {
+    width: 300px;
+    background-color: #c7d2df;
+    color: #383a53;
+    border: 1px solid #383a53;
+    margin: .5em;
+    padding: .5em;
+}
