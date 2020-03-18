@@ -1,34 +1,33 @@
 @import url("./notes.css");
+@import url("./criminals.css");
+@import url('https://fonts.googleapis.com/css2?family=Podkova:wght@400;700&display=swap');
+body {
+    font-family: 'Podkova', serif;
+    font-size: 1em;
+}
+
+#header {
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1px solid orange;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-}
-
-.criminalsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.criminal {
-    border: 1px solid black;
-    background-color: lightgray;
-    margin: .5em;
-    padding: .5em;
-    display: flex;
-    flex-direction: column;
-    flex-basis: 20%;
-}
-
-.criminal p,
-li {
-    font-size: small;
+    border: 1px solid orange;
 }
 
 .listsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    border: 1px solid orange;
 }
 
 .hidden {

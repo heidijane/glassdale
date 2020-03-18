@@ -1,8 +1,16 @@
 .notesContainer {
-    width: 300px;
     background-color: #c7d2df;
     color: #383a53;
     border: 1px solid #383a53;
-    margin: .5em;
     padding: .5em;
+    margin-left: 1em;
+}
+
+.note {
+    width: 300px;
+}
+
+.notesContainer hr {
+    border: 0;
+    border-top: 1px dotted #383a53;
 }
