@@ -6,18 +6,25 @@ const contentTarget = document.querySelector(".noteFormContainer")
 let visibility = false
 
 eventHub.addEventListener("noteFormButtonClicked", customEvent => {
+    const button = document.querySelector("#showNoteForm")
+
+    //change the visibility of the note form when the button is clicked
     visibility = !visibility
 
     if (visibility) {
         contentTarget.classList.remove("hidden")
+        button.innerHTML = "Hide Note Form"
     } else {
         contentTarget.classList.add("hidden")
+        button.innerHTML = "Show Note Form"
     }
+
 })
 
 const render = () => {
     contentTarget.classList.add("hidden")
     contentTarget.innerHTML = `
+        <div class="break"></div>
         <fieldset>
             <label for="note-subject">Subject</label>
             <input type="text" id="note-subject">

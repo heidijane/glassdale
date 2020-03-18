@@ -1,7 +1,7 @@
 export const Criminal = (criminalObject) => {
         return `
     <div class="criminal">
-        <h4>${criminalObject.name}</h4>
+        <h3>${criminalObject.name}</h3>
         <div class="criminal__details">
             <p>Convicted for ${criminalObject.conviction}</p>
             <p>Arrested by ${criminalObject.arrestingOfficer}</p>

@@ -6,12 +6,15 @@ const eventHub = document.querySelector(".container")
 let visibility = false
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
+    const button = document.querySelector("#showAllNotes")
     visibility = !visibility
 
     if (visibility) {
         contentTarget.classList.remove("hidden")
+        button.innerHTML = "Hide All Notes"
     } else {
         contentTarget.classList.add("hidden")
+        button.innerHTML = "Show All Notes"
     }
 })
 
