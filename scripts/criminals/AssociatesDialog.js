@@ -31,13 +31,11 @@ eventHub.addEventListener("associatesButtonClicked", customEvent => {
 export const associatesDialog = (criminalObject) => {
         contentTarget.innerHTML = `
         <dialog id="associatesDialog">
-            <ul>
                 ${
                     criminalObject.known_associates.map(currentAssociate => {
-                        return `<li>${currentAssociate.name}</li>`
+                        return `<p>${currentAssociate.name} claims suspect was ${currentAssociate.alibi}</p>`
                     }).join('')
                 }
-            </ul>
         </dialog>
     `
 }
