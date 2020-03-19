@@ -23,9 +23,9 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 })
 
 const render = () => {
-    contentTarget.classList.add("hidden")
     getNotes().then(() => {
         const allTheNotes = useNotes()
+        allTheNotes.reverse()
         contentTarget.innerHTML = allTheNotes.map(
             currentNoteObject => {
                 return Note(currentNoteObject)

@@ -1,28 +1,21 @@
 {
-  "notes": [
-    {
-      "date": "2020-03-12",
-      "subject": "Test Note",
-      "text": "Just making sure my new note system is working properly.",
-      "id": 1
-    },
-    {
-      "date": 1584387964891,
-      "subject": "Test Note 2",
-      "text": "Testing a modification to the note provider",
-      "id": 2
-    },
-    {
-      "date": 1584461845786,
-      "subject": "Second Test Note",
-      "text": "Another test note!",
-      "id": 3
-    },
-    {
-      "date": 1584463289389,
-      "subject": "Another Test",
-      "text": "testing!",
-      "id": 4
-    }
-  ]
+    "notes": [{
+            "date": 1584647721540,
+            "subject": "Nathanael Champlin",
+            "text": "Associate Devyn Rodriguez claims that suspect was eating a table at the time of the crime. If this is true it's really weird.",
+            "id": 1
+        },
+        {
+            "date": 1584648045156,
+            "subject": "Abigayle Hayes",
+            "text": "Micaela Gleason claims that the suspect was defensivly drinking bagels at the time of the crime, however bagels are a solid food.",
+            "id": 2
+        },
+        {
+            "date": 1584648144238,
+            "subject": "Arno Howe",
+            "text": "Associate of Arno claims that he was eating a shoe at the time of the crimes. Do all the criminals in Glassdale insist upon eating things that aren't edible?",
+            "id": 3
+        }
+    ]
 }

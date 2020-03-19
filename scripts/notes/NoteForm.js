@@ -41,8 +41,8 @@ const render = () => {
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
-        const subject = document.getElementById("note-subject").value
-        const text = document.getElementById("note-text").value
+        let subject = document.getElementById("note-subject").value
+        let text = document.getElementById("note-text").value
 
         //Make a new object representation of a note
         const newNote = {
@@ -51,6 +51,10 @@ contentTarget.addEventListener("click", clickEvent => {
             subject: subject,
             text: text
         }
+
+        //clear out the current data in the form so that new data can be entered
+        document.getElementById("note-subject").value = ''
+        document.getElementById("note-text").value = ''
 
         // Change API state and application state
         saveNote(newNote)
