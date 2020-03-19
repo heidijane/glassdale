@@ -4,6 +4,23 @@
   const contentTarget = document.querySelector(".criminalsContainer")
   const eventHub = document.querySelector('.container')
 
+  //create a click event for when the Known Associates button is clicked
+  eventHub.addEventListener("click", clickEvent => {
+      if (clickEvent.target.id.startsWith("associates--")) {
+
+          const [prefix, criminalID] = clickEvent.target.id.split('--')
+
+          const showAssociatesEvent = new CustomEvent("associatesButtonClicked", {
+              detail: {
+                  criminalID: criminalID
+              }
+          })
+
+
+          eventHub.dispatchEvent(showAssociatesEvent)
+      }
+  })
+
   eventHub.addEventListener("crimeChosen", event => {
       //filter the list of criminals who commited the crime  
 

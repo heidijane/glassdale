@@ -6,6 +6,7 @@
   import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js"
   import { DisplayNotesButton } from "./notes/DisplayNotesButton.js"
   import "./notes/NoteList.js"
+  import "./criminals/AssociatesDialog.js"
 
   getCriminals().then(CriminalList)
 
