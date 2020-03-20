@@ -1,7 +1,7 @@
   import { useCriminals } from "./CriminalProvider.js";
   import { Criminal } from "./Criminal.js";
 
-  const contentTarget = document.querySelector(".criminalsContainer")
+  const contentTarget = document.querySelector(".personsContainer")
   const eventHub = document.querySelector('.container')
 
   //create a click event for when the Known Associates button is clicked
