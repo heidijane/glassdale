@@ -24,13 +24,21 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 })
 
 const render = () => {
-    notesCollection.reverse()
-    contentTarget.innerHTML = notesCollection.map(
-        currentNoteObject => {
-            const foundCriminalObject = criminalCollection.find(criminal => criminal.id === currentNoteObject.criminalID)
-            return Note(currentNoteObject, foundCriminalObject)
-        }
-    ).join("<hr>")
+    getNotes().then(() => {
+        const allTheNotes = useNotes()
+        allTheNotes.reverse()
+
+        getCriminals().then(() => {
+            const allTheCriminals = useCriminals()
+
+            contentTarget.innerHTML = allTheNotes.map(
+                currentNote => {
+                    const foundCriminal = allTheCriminals.find(criminal => criminal.id === currentNote.criminalID)
+                    return Note(currentNote, foundCriminal)
+                }
+            ).join('')
+        })
+    })
 }
 
 export const NoteList = () => {

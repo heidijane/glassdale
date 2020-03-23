@@ -16,6 +16,18 @@
             "criminalID": 72,
             "text": "Associate of Arno claims that he was eating a shoe at the time of the crimes. Do all the criminals in Glassdale insist upon eating things that aren't edible?",
             "id": 3
+        },
+        {
+            "date": 1584989134513,
+            "criminalID": 14,
+            "text": "Alibis do not match",
+            "id": 4
+        },
+        {
+            "date": 1584989336533,
+            "criminalID": 92,
+            "text": "The alibis check out.",
+            "id": 5
         }
     ]
 }

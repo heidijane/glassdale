@@ -1,4 +1,6 @@
 import { saveNote } from "./NoteDataProvider.js"
+import { GenerateCriminalSelectOptions } from "./CriminalDropdown.js"
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
@@ -22,17 +24,23 @@ eventHub.addEventListener("noteFormButtonClicked", customEvent => {
 })
 
 const render = () => {
+
     contentTarget.classList.add("hidden")
     contentTarget.innerHTML = `
         <div class="break"></div>
         <fieldset>
-            <label for="note-subject">Subject</label>
-            <input type="text" id="note-subject">
-
-            <label for="note-text">Note</label>
-            <textarea id="note-text" rows="4" cols="50"></textarea>
-
-            <button id="saveNote">Save Note</button>
+            <p>
+                <label for="note-criminal">Criminal</label><br />
+                <select id="note-criminal">
+                </select>
+            </p>
+            <p>
+                <label for="note-text">Note</label><br />
+                <textarea id="note-text" rows="4" cols="50"></textarea>
+            </p>
+            <p>
+                <button id="saveNote">Save Note</button>
+            </p>
         </fieldset>
     `
 }
@@ -41,19 +49,19 @@ const render = () => {
 contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
 
-        let subject = document.getElementById("note-subject").value
+        let criminalID = parseInt(document.getElementById("note-criminal").value)
         let text = document.getElementById("note-text").value
 
         //Make a new object representation of a note
         const newNote = {
             // Key/value pairs here
             date: Date.now(),
-            subject: subject,
+            criminalID: criminalID,
             text: text
         }
 
         //clear out the current data in the form so that new data can be entered
-        document.getElementById("note-subject").value = ''
+        document.getElementById("note-criminal").value = ''
         document.getElementById("note-text").value = ''
 
         // Change API state and application state
@@ -63,6 +71,10 @@ contentTarget.addEventListener("click", clickEvent => {
 
 const NoteForm = () => {
     render()
+        //fill the drop-down with the criminals
+    getCriminals().then(() => {
+        GenerateCriminalSelectOptions(useCriminals())
+    })
 }
 
 export default NoteForm
