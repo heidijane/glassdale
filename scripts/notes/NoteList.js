@@ -1,4 +1,5 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js"
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 import { Note } from "./Note.js"
 
 const contentTarget = document.querySelector(".notesContainer")
@@ -23,18 +24,17 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 })
 
 const render = () => {
-    getNotes().then(() => {
-        const allTheNotes = useNotes()
-        allTheNotes.reverse()
-        contentTarget.innerHTML = allTheNotes.map(
-            currentNoteObject => {
-                return Note(currentNoteObject)
-            }
-        ).join("<hr>")
-    })
+    notesCollection.reverse()
+    contentTarget.innerHTML = notesCollection.map(
+        currentNoteObject => {
+            const foundCriminalObject = criminalCollection.find(criminal => criminal.id === currentNoteObject.criminalID)
+            return Note(currentNoteObject, foundCriminalObject)
+        }
+    ).join("<hr>")
 }
 
 export const NoteList = () => {
+
     render()
 }
 
