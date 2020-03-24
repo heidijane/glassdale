@@ -9,8 +9,12 @@
   import "./criminals/AssociatesDialog.js"
   import "./witnesses/WitnessList.js"
   import { DisplayWitnessesButton } from "./witnesses/DisplayWitnessesButton.js"
+  import { NoteList } from "./notes/NoteList.js"
 
-  getCriminals().then(CriminalList)
+  getCriminals()
+      .then(CriminalList)
+      .then(NoteForm)
+      .then(NoteList)
 
   getConvictions().then(ConvictionSelect)
 

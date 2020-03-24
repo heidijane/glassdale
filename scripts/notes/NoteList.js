@@ -28,16 +28,14 @@ const render = () => {
         const allTheNotes = useNotes()
         allTheNotes.reverse()
 
-        getCriminals().then(() => {
-            const allTheCriminals = useCriminals()
+        const allTheCriminals = useCriminals()
 
-            contentTarget.innerHTML = allTheNotes.map(
-                currentNote => {
-                    const foundCriminal = allTheCriminals.find(criminal => criminal.id === currentNote.criminalID)
-                    return Note(currentNote, foundCriminal)
-                }
-            ).join('')
-        })
+        contentTarget.innerHTML = allTheNotes.map(
+            currentNote => {
+                const foundCriminal = allTheCriminals.find(criminal => criminal.id === currentNote.criminalID)
+                return Note(currentNote, foundCriminal)
+            }
+        ).join('')
     })
 }
 

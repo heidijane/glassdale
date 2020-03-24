@@ -1,5 +1,4 @@
 import { saveNote } from "./NoteDataProvider.js"
-import { GenerateCriminalSelectOptions } from "./CriminalDropdown.js"
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
 const eventHub = document.querySelector(".container")
@@ -25,13 +24,21 @@ eventHub.addEventListener("noteFormButtonClicked", customEvent => {
 
 const render = () => {
 
-    contentTarget.classList.add("hidden")
-    contentTarget.innerHTML = `
+        const ArrayOfCriminalObjects = useCriminals()
+
+        contentTarget.classList.add("hidden")
+        contentTarget.innerHTML = `
         <div class="break"></div>
         <fieldset>
             <p>
                 <label for="note-criminal">Criminal</label><br />
                 <select id="note-criminal">
+                <option value="">Please choose a criminal...</option>
+                ${
+                    ArrayOfCriminalObjects.map(singleCriminalObject => {
+                        return `<option value="${singleCriminalObject.id}">${singleCriminalObject.name}</option>`
+                    }).join("")
+                }
                 </select>
             </p>
             <p>
@@ -71,10 +78,6 @@ contentTarget.addEventListener("click", clickEvent => {
 
 const NoteForm = () => {
     render()
-        //fill the drop-down with the criminals
-    getCriminals().then(() => {
-        GenerateCriminalSelectOptions(useCriminals())
-    })
 }
 
 export default NoteForm
