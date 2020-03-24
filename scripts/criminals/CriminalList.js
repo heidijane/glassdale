@@ -30,12 +30,20 @@
       //get the crime
       const theCrimeThatWasChosen = event.detail.chosenCrime;
 
-      const guiltyCriminals = criminals.filter(criminal => { //criminal holds each individual array element
-          if (criminal.conviction === theCrimeThatWasChosen) {
-              return true
-          }
-          return false
-      })
+      let guiltyCriminals = []
+
+      if (theCrimeThatWasChosen === "0") {
+          //if user selects the top option bring back the entire list of criminals
+          guiltyCriminals = criminals
+      } else {
+          //user selected a crime, filter the list
+          guiltyCriminals = criminals.filter(criminal => { //criminal holds each individual array element
+              if (criminal.conviction === theCrimeThatWasChosen) {
+                  return true
+              }
+              return false
+          })
+      }
 
       //clear the code out before building the list back up again       
       contentTarget.innerHTML = ""

@@ -24,7 +24,7 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
     render()
 })
 
-eventHub.addEventListener("click", clickEvent => {
+contentTarget.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("deleteNote--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
 
