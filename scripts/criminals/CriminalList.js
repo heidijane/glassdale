@@ -1,8 +1,9 @@
   import { useCriminals } from "./CriminalProvider.js";
   import { Criminal } from "./Criminal.js";
 
-  const contentTarget = document.querySelector(".personsContainer")
+  const contentTarget = document.querySelector(".criminalsContainer")
   const eventHub = document.querySelector('.container')
+  let visibility = true
 
   //create a click event for when the Known Associates button is clicked
   eventHub.addEventListener("click", clickEvent => {
@@ -18,6 +19,16 @@
 
 
           eventHub.dispatchEvent(showAssociatesEvent)
+      }
+  })
+
+  eventHub.addEventListener("witnessButtonClicked", customEvent => {
+      visibility = !visibility
+
+      if (visibility === true) {
+          contentTarget.classList.remove("hidden")
+      } else {
+          contentTarget.classList.add("hidden")
       }
   })
 

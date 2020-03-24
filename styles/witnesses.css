@@ -1,3 +1,9 @@
+.witnessContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .witness {
     border: 1px solid black;
     background-color: lightgray;

@@ -31,8 +31,9 @@ const ConvictionSelect = () => {
 
         const render = convictionsCollection => {
                 contentTarget.innerHTML = `
+                <label for="crimeSelect">Filter by crime: </label>
             <select class="dropdown" id="crimeSelect">
-                <option value="0">Please select a crime...</option>
+                <option value="0">Show All Crimes</option>
                 ${
                     convictionsCollection.map(singleConviction => {
                         return `<option>${singleConviction.name}</option>`
