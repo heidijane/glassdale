@@ -1,6 +1,7 @@
 @import url("./notes.css");
 @import url("./criminals.css");
 @import url("./witnesses.css");
+@import url("./associatesdialogs.css");
 @import url('https://fonts.googleapis.com/css2?family=Podkova:wght@400;700&display=swap');
 body {
     font-family: 'Podkova', serif;

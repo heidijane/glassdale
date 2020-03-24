@@ -37,6 +37,9 @@ contentTarget.addEventListener("click", clickEvent => {
 })
 
 export const associatesDialog = (criminalObject) => {
+        //get criminal's first name
+        const [firstName, lastName] = criminalObject.name.split(" ")
+
         contentTarget.innerHTML = `
         <dialog id="associatesDialog">
                 ${
@@ -44,7 +47,8 @@ export const associatesDialog = (criminalObject) => {
                         return `<p>${currentAssociate.name} claims suspect was ${currentAssociate.alibi}</p>`
                     }).join('')
                 }
-            <button id="close--${criminalObject.id}">Close</button>
+            <div id="associatesDialog__header">${firstName}'s Known Associates</div>
+            <div id="close--${criminalObject.id}" class="button--close">X</div>
         </dialog>
     `
 }
