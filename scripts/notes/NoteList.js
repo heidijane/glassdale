@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteDataProvider.js"
+import { getNotes, useNotes, deleteNote } from "./NoteDataProvider.js"
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 import { Note } from "./Note.js"
 
@@ -19,8 +19,20 @@ eventHub.addEventListener("allNotesClicked", customEvent => {
     }
 })
 
+//renders the form again when there has been a change to the note data, for instance when a note is added or deleted
 eventHub.addEventListener("noteStateChanged", customEvent => {
     render()
+})
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        //delete the note with the corresponding id
+        deleteNote(id)
+
+        //the state change is set in the deleteNote function, so the list will re-render
+    }
 })
 
 const render = () => {
@@ -43,5 +55,3 @@ export const NoteList = () => {
 
     render()
 }
-
-NoteList()

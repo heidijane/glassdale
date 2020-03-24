@@ -1,33 +1,34 @@
 {
-    "notes": [{
-            "date": 1584647721540,
-            "criminalID": 3,
-            "text": "Associate Devyn Rodriguez claims that suspect was eating a table at the time of the crime. If this is true it's really weird.",
-            "id": 1
-        },
-        {
-            "date": 1584648045156,
-            "criminalID": 12,
-            "text": "Micaela Gleason claims that the suspect was defensivly drinking bagels at the time of the crime, however bagels are a solid food.",
-            "id": 2
-        },
-        {
-            "date": 1584648144238,
-            "criminalID": 72,
-            "text": "Associate of Arno claims that he was eating a shoe at the time of the crimes. Do all the criminals in Glassdale insist upon eating things that aren't edible?",
-            "id": 3
-        },
-        {
-            "date": 1584989134513,
-            "criminalID": 14,
-            "text": "Alibis do not match",
-            "id": 4
-        },
-        {
-            "date": 1584989336533,
-            "criminalID": 92,
-            "text": "The alibis check out.",
-            "id": 5
-        }
-    ]
+  "notes": [
+    {
+      "date": 1584647721540,
+      "criminalID": 3,
+      "text": "Associate Devyn Rodriguez claims that suspect was eating a table at the time of the crime. If this is true it's really weird.",
+      "id": 1
+    },
+    {
+      "date": 1584648045156,
+      "criminalID": 12,
+      "text": "Micaela Gleason claims that the suspect was defensivly drinking bagels at the time of the crime, however bagels are a solid food.",
+      "id": 2
+    },
+    {
+      "date": 1584648144238,
+      "criminalID": 72,
+      "text": "Associate of Arno claims that he was eating a shoe at the time of the crimes. Do all the criminals in Glassdale insist upon eating things that aren't edible?",
+      "id": 3
+    },
+    {
+      "date": 1584989134513,
+      "criminalID": 14,
+      "text": "Alibis do not match",
+      "id": 4
+    },
+    {
+      "date": 1584989336533,
+      "criminalID": 92,
+      "text": "The alibis check out.",
+      "id": 5
+    }
+  ]
 }
