@@ -28,6 +28,14 @@ eventHub.addEventListener("associatesButtonClicked", customEvent => {
     document.querySelector('#associatesDialog').showModal()
 })
 
+//close the dialog when close button is pressed
+contentTarget.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("close--")) {
+        //close the dialog box
+        clickEvent.target.parentNode.close()
+    }
+})
+
 export const associatesDialog = (criminalObject) => {
         contentTarget.innerHTML = `
         <dialog id="associatesDialog">
@@ -36,6 +44,7 @@ export const associatesDialog = (criminalObject) => {
                         return `<p>${currentAssociate.name} claims suspect was ${currentAssociate.alibi}</p>`
                     }).join('')
                 }
+            <button id="close--${criminalObject.id}">Close</button>
         </dialog>
     `
 }
